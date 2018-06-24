@@ -2,7 +2,7 @@ ssr_image_name='ssr-alpine'
 ssr_image_version=1.0.0
 ssr_image="docker.kiuber.me/$ssr_image_name:$ssr_image_version"
 
-ssr_container='ssr-alpine'
+ssr_container='ssr'
 
 ssr_config_in_host="$PWD/config/shadowsocksr.json"
 ssr_config_in_container='/etc/shadowsocksr.json'
