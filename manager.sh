@@ -12,7 +12,7 @@ source $PWD/appupy/base-bash/base.sh
 function run() {
     local cmd="docker run --name $ssr_container"
     cmd="$cmd -v $ssr_config_in_host:$ssr_config_in_container"
-    cmd="$cmd -p 5228:80"
+    cmd="$cmd -p 8128:80"
     cmd="$cmd -d $ssr_image python server.py -c /etc/shadowsocksr.json"
     _run_cmd "$cmd"
 }
