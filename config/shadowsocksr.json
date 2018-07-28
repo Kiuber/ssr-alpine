@@ -10,10 +10,12 @@
     "method":"aes-256-cfb",
     "protocol": "auth_sha1_v4",
     "protocol_param": "",
-    "obfs": "http_simple",
+    "obfs": "tls1.2_ticket_auth",
     "obfs_param": "",
     "redirect": "",
     "dns_ipv6": false,
     "fast_open": false,
-    "workers": 1
+    "workers": 1,
+    "remarks": "remark_name",
+    "group": "group_name"
 }
