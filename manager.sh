@@ -10,7 +10,8 @@ ssr_config_in_container='/etc/shadowsocksr.json'
 py_files_in_host="$PWD/appupy/py-files"
 py_files_in_container='/opt/py-files'
 
-source $PWD/appupy/base-bash/base.sh
+source "$PWD/appupy/base-bash/_base.sh"
+source "$PWD/appupy/base-bash/_docker.sh"
 
 function run() {
     local cmd="docker run --name $ssr_container"
