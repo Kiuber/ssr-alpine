@@ -1,6 +1,8 @@
+domain='docker.kiuber.me'
+
 ssr_image_name='ssr-alpine'
 ssr_image_version=1.0.0
-ssr_image="docker.kiuber.me/$ssr_image_name:$ssr_image_version"
+ssr_image="$domain/$ssr_image_name:$ssr_image_version"
 
 ssr_container='ssr'
 
@@ -12,6 +14,11 @@ py_files_in_container='/opt/py-files'
 
 source "$PWD/appupy/base-bash/_base.sh"
 source "$PWD/appupy/base-bash/_docker.sh"
+
+function build_ssr() {
+    local cmd="docker build -t $ssr_image $PWDdocker"
+    _run_cmd "$cmd"
+}
 
 function run() {
     local cmd="docker run --name $ssr_container"
@@ -55,6 +62,8 @@ function help() {
     cat <<-EOF
 
         Valid options are:
+            build_ssr
+
             run
             stop
             start 
