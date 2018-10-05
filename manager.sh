@@ -16,7 +16,7 @@ source "$PWD/appupy/base-bash/_base.sh"
 source "$PWD/appupy/base-bash/_docker.sh"
 
 function build_ssr() {
-    local cmd="docker build -t $ssr_image $PWDdocker"
+    local cmd="docker build -t $ssr_image $PWD/docker"
     _run_cmd "$cmd"
 }
 
