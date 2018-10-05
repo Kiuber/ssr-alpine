@@ -20,6 +20,10 @@ function build_ssr() {
     _run_cmd "$cmd"
 }
 
+function build_images() {
+    build_ssr
+}
+
 function run() {
     local cmd="docker run --name $ssr_container"
     cmd="$cmd -v $ssr_config_in_host:$ssr_config_in_container"
@@ -62,7 +66,7 @@ function help() {
     cat <<-EOF
 
         Valid options are:
-            build_ssr
+            build_images
 
             run
             stop
