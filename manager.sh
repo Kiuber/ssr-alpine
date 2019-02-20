@@ -33,6 +33,15 @@ function run() {
     _run_cmd "$cmd"
 }
 
+function run_bbr() {
+    # https://github.com/letssudormrf/ssr-bbr-docker
+    local bbr_container='ssr-bbr'
+    _remove_container $bbr_container
+
+    local cmd="docker run --restart always --privileged -d -p 465:465/tcp -p 465:465/udp --name $bbr_container letssudormrf/ssr-bbr-docker -p 465 -k helloworld -m aes-128-ctr -O auth_aes128_sha1 -o http_post"
+    _run_cmd "$cmd"
+}
+
 function stop() {
     _remove_container $ssr_container
 }
@@ -72,6 +81,8 @@ function help() {
             stop
             start 
             restart
+
+            run_bbr
 
             show_qrcode (\$hostname, \$port)
             to_ssr
