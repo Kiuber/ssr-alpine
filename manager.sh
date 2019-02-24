@@ -51,6 +51,10 @@ function start() {
 }
 
 function restart() {
+    run_bbr
+}
+
+function restart_ssr() {
     _remove_container $ssr_container
     run
 }
